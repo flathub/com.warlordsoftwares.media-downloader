@@ -57,6 +57,7 @@ modules:
   - ffmpeg.json
   - mpv.json
   - python3-req.json
+  - python3-yt-dlp.json
   - name: media-downloader
     buildsystem: simple
     build-commands:
@@ -69,6 +70,6 @@ modules:
       - install -Dm644 ${FLATPAK_DEST}/youtube-dl-pro/share/metainfo/com.warlordsoftwares.media-downloader.metainfo.xml ${FLATPAK_DEST}/share/metainfo/com.warlordsoftwares.media-downloader.metainfo.xml
     sources:
       - type: archive
-        url: https://warlordsoftwares.com/static/app_builds/flatpak/FLATPAK_YOUTUBE-DL-PRO-2024.7.5.tar.gz
-        sha256: f29b0c8b98003d1ac3d64f8f750906cb479ef05482e2c33ab7a3c0b031eb5a00
+        url: https://warlordsoftwares.com/static/app_builds/flatpak/FLATPAK_YOUTUBE-DL-PRO-2024.7.11.tar.gz
+        sha256: 295d83df78b3c41c4b84df747df9b80520e7ccd2d3e0b97521b9923767177458
 
