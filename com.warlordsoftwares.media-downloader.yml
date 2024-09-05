@@ -11,13 +11,14 @@ build-options:
     - BASEAPP_REMOVE_WEBENGINE=1
 command: youtube-dl-pro.sh
 finish-args:
-  - --share=ipc
-  - --socket=x11
-  - --device=dri
   - --share=network
+  - --share=ipc
+  - --socket=fallback-x11
+  - --socket=wayland
   - --filesystem=xdg-download
   - --filesystem=xdg-documents
   - --filesystem=xdg-run/gvfsd
+  - --device=dri
   - --socket=pulseaudio
 tags:
   - proprietary
@@ -70,5 +71,5 @@ modules:
     sources:
       - type: archive
         url: https://warlordsoftwares.com/static/app_builds/flatpak/FLATPAK_YOUTUBE-DL-PRO-2024.9.1.tar.gz
-        sha256: fc1e9107284f84bcb339160e1de526d38996c4618768685d97654ccd0d5ed4e9
+        sha256: 2df6f31e9fe2a5a1db75e5b0c3f42ff7b8bdde3b8b154ca5be96c909f3c08d4b
 
