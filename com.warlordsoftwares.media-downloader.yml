@@ -70,6 +70,6 @@ modules:
       - install -Dm644 ${FLATPAK_DEST}/youtube-dl-pro/share/metainfo/com.warlordsoftwares.media-downloader.metainfo.xml ${FLATPAK_DEST}/share/metainfo/com.warlordsoftwares.media-downloader.metainfo.xml
     sources:
       - type: archive
-        url: https://warlordsoftwares.com/static/app_builds/flatpak/FLATPAK_YOUTUBE-DL-PRO-2025.4.22.tar.gz
-        sha256: f997fc3223e5ad2da94d08ef4c3071a3c91d12fc3dc38f20985611140a8e0d2d
+        url: https://warlordsoftwares.com/static/app_builds/flatpak/FLATPAK_YOUTUBE-DL-PRO-2025.5.7.tar.gz
+        sha256: 9f5149630de1abc774c243dedc5779311586eb3741fa96e2f9b897b9dd7c3b0c
 
