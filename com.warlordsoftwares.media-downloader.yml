@@ -51,6 +51,8 @@ modules:
   - mpv.json
   - python3-req.json
   - python3-yt-dlp.json
+  - deno.json
+  - yt-dlp-ejs.json
 
   - name: media-downloader
     buildsystem: simple
@@ -65,6 +67,6 @@ modules:
     sources:
       - type: archive
         url: https://warlordsoftwares.com/static/app_builds/flatpak/FLATPAK_YOUTUBE-DL-PRO.tar.gz
-        sha256: 32c5a1910e8366e9b8f2bf4cce102bc0f4afec5298e0a034e244cfa28ae052e2
+        sha256: c5912d4a84eb7461e07d888c11936196e5125e469827600611e365d803e60e42
 
 
