@@ -1,9 +1,9 @@
 app-id: com.warlordsoftwares.media-downloader
 runtime: org.kde.Platform
-runtime-version: 5.15-23.08
+runtime-version: "5.15-24.08"
 sdk: org.kde.Sdk
 base: com.riverbankcomputing.PyQt.BaseApp
-base-version: '5.15-23.08'
+base-version: "5.15-24.08"
 command: youtube-dl-pro.sh
 
 tags:
@@ -67,6 +67,6 @@ modules:
     sources:
       - type: archive
         url: https://warlordsoftwares.com/static/app_builds/flatpak/FLATPAK_YOUTUBE-DL-PRO.tar.gz
-        sha256: e82778255bdedd5041c17b27950db31943dfa17606bfc654aa5dd7075e30baa7
+        sha256: 0531ecff70c4845c1501bea268d6bf76031cae642e085938912db353343c1dd9
 
 
