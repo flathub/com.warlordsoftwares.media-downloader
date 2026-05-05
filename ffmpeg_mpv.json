@@ -89,7 +89,7 @@
             "--enable-libtheora",
             "--enable-libvorbis",
             "--enable-libvpx",
-            "--enable-libx264",
+            "--enable-libx264"
           ],
           "build-options": {
             "arch": {
