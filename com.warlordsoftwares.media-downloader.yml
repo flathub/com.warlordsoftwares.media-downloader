@@ -24,6 +24,8 @@ finish-args:
   - --env=QTWEBENGINE_DISABLE_SANDBOX=1
   - --env=QTWEBENGINE_RESOURCES_PATH=/app/share/qt5/resources
   - --env=QTWEBENGINE_LOCALES_PATH=/app/share/qt5/translations/qtwebengine_locales
+  - --env=QT_ENABLE_HIGHDPI_SCALING=1
+  - --env=APP_PLATFORM=FLATPAK
 
 cleanup-commands:
   - /app/cleanup-BaseApp.sh
@@ -101,14 +103,12 @@ modules:
     build-commands:
       - mkdir -p ${FLATPAK_DEST}/youtube-dl-pro
       - cp -r * ${FLATPAK_DEST}/youtube-dl-pro
-      - install -Dm755 ${FLATPAK_DEST}/youtube-dl-pro/youtube-dl-pro.sh ${FLATPAK_DEST}/bin/youtube-dl-pro.sh
-      - install -Dm644 ${FLATPAK_DEST}/youtube-dl-pro/share/icons/icon.png ${FLATPAK_DEST}/share/icons/hicolor/512x512/apps/com.warlordsoftwares.media-downloader.png
-      - install -Dm644 ${FLATPAK_DEST}/youtube-dl-pro/share/applications/media-downloader.desktop ${FLATPAK_DEST}/share/applications/com.warlordsoftwares.media-downloader.desktop
+      - install -Dm755 ${FLATPAK_DEST}/youtube-dl-pro/flatpak/youtube-dl-pro.sh ${FLATPAK_DEST}/bin/youtube-dl-pro.sh
+      - install -Dm644 ${FLATPAK_DEST}/youtube-dl-pro/flatpak/share/icons/icon.png ${FLATPAK_DEST}/share/icons/hicolor/512x512/apps/com.warlordsoftwares.media-downloader.png
+      - install -Dm644 ${FLATPAK_DEST}/youtube-dl-pro/flatpak/share/applications/media-downloader.desktop ${FLATPAK_DEST}/share/applications/com.warlordsoftwares.media-downloader.desktop
       - desktop-file-edit --set-icon=${FLATPAK_ID} ${FLATPAK_DEST}/share/applications/com.warlordsoftwares.media-downloader.desktop
-      - install -Dm644 ${FLATPAK_DEST}/youtube-dl-pro/share/metainfo/com.warlordsoftwares.media-downloader.metainfo.xml ${FLATPAK_DEST}/share/metainfo/com.warlordsoftwares.media-downloader.metainfo.xml
+      - install -Dm644 ${FLATPAK_DEST}/youtube-dl-pro/flatpak/share/metainfo/com.warlordsoftwares.media-downloader.metainfo.xml ${FLATPAK_DEST}/share/metainfo/com.warlordsoftwares.media-downloader.metainfo.xml
     sources:
       - type: archive
         url: https://warlordsoftwares.com/static/app_builds/flatpak/FLATPAK_YOUTUBE-DL-PRO.tar.gz
-        sha256: b9e1e39d305c28ed71bdbaefe59aa1b3da1e4033f89a5ca3e69fc564c35c58a5
-
-
+        sha256: da2269c9c1cc16c5124936d8a4e7563e3d5e7c37fde2772e3f0455829851f588
