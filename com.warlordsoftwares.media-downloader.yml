@@ -70,11 +70,27 @@ modules:
         tag: v7.360.1
         commit: cee9b076f2c63104ccfd497fa79c39a867293ec4
 
+  # mpv needs xpresent for its X11 backend and the runtime does not ship it.
+  # Without this module meson silently drops X11 and mpv is Wayland-only:
+  # on X11 desktops (Cinnamon, XFCE, MATE) playback has sound but no video.
+  - name: libXpresent
+    cleanup:
+      - /share/man
+      - /lib/*.la
+    sources:
+      - type: archive
+        url: https://xorg.freedesktop.org/archive/individual/lib/libXpresent-1.0.2.tar.xz
+        sha256: 4e5b21b4812206a4b223013606ae31170502c1043038777a1ef8f70c09d37602
+
   - name: mpv
     buildsystem: meson
     build-options:
       cflags: -DNDEBUG=1
     config-opts:
+      # "enabled" (not auto) so a missing X11 dependency fails the build
+      # instead of shipping an mpv that cannot open a window on X11.
+      - -Dx11=enabled
+      - -Degl-x11=enabled
       - -Dlibmpv=false
       - -Dbuild-date=false
       - -Dpulse=enabled
@@ -111,4 +127,4 @@ modules:
     sources:
       - type: archive
         url: https://warlordsoftwares.com/static/app_builds/flatpak/FLATPAK_YOUTUBE-DL-PRO.tar.gz
-        sha256: 2fd54f19d53ece0484241369804d756cb2d14ce4b3d8f20a0fc6abf5c3f92bc6
+        sha256: 1ebd8b46a3f2adfbc0ecbbfa06bbd9d098a875df443f06248531b228d584077b
