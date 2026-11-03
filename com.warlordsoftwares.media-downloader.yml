@@ -127,4 +127,4 @@ modules:
     sources:
       - type: archive
         url: https://warlordsoftwares.com/static/app_builds/flatpak/FLATPAK_YOUTUBE-DL-PRO.tar.gz
-        sha256: 136dc8a70ee5aa1f7cddabe4b7080ffd18c9687cc28fbef33c90c9fca7a72021
+        sha256: e7f29790e1e58da1868f7d85edd4f6af5c8d45b28f34351df559afc157ad6bad
